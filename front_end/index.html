@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="constant.js"></script>
+<script src="songService.js"></script>
+<script src="controller.js"></script>
+
+<body ng-app="songApp" ng-controller="songCtrl">
+<h1 style=margin-top:10px">Songs List</h1>
+<div >
+Search: <input type="text" ng-model="searchText" ng-change="filterSongs(searchText)"><br>
+</div>
+<hr color="red">
+ <table  border="1" style="margin-top:20px">
+        <thead>
+			<tr>
+				<th>Title </th>
+				<th > Artist   </th>
+				<th >Length</th>
+		  </tr>
+        </thead>
+        <tbody>
+			<tr ng-repeat="song in songs ">
+				<td>{{song.title}}	</td>
+				<td>{{song.artist}}</td>
+				<td>{{song.length}}</td>
+			</tr>
+        </tbody>
+    </table>
+</body>
+</html>
